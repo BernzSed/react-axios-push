@@ -1,0 +1,53 @@
+{
+  "name": "react-axios-push",
+  "version": "0.0.1-alpha.1",
+  "description": "Use axios-push in your react apps",
+  "main": "lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib",
+    "test": "jest",
+    "lint": "eslint src test",
+    "build": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "prepublishOnly": "npm run clean && npm run lint && npm run test && npm run build"
+  },
+  "engines": {
+    "node": ">=8.5.0"
+  },
+  "author": "Bernie Stern <bernzs@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "axios",
+    "http2",
+    "http/2",
+    "push",
+    "push_promise",
+    "isomorphic"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BernzSed/react-axios-push.git"
+  },
+  "dependencies": {
+    "axios-push": "0.0.2",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-jest": "^21.2.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "cross-env": "^5.1.0",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "jest": "^21.2.1",
+    "rimraf": "^2.6.2"
+  }
+}
