@@ -4,7 +4,7 @@ import prepareAxios from 'axios-push';
 
 export default class AxiosProvider extends React.Component {
   static propTypes = {
-    request: PropTypes.object,
+    req: PropTypes.object,
     axios: PropTypes.object,
     children: PropTypes.node.isRequired
   };
@@ -20,10 +20,14 @@ export default class AxiosProvider extends React.Component {
   }
 
   componentWillMount() {
-    const { request, axios } = this.props;
+    const { req, axios } = this.props;
     this.setState({
-      axios: prepareAxios(request, axios)
+      axios: prepareAxios(req, axios)
     });
+  }
+
+  componentWillReceiveProps(nextProps) {
+    // TODO if new axios config passed in, update axios config.
   }
 
   render() {
